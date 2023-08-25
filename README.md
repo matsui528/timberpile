@@ -1,4 +1,4 @@
-# Timberpile :wood:
+# Timberpile:wood:
 Given three CSV files, [Author List](src/person.csv), [Paper List](src/paper.csv), and [Author Paper Relationship](src/paper_author.csv), this script generates paper lists in various styles.
 
 ## Usage
@@ -6,8 +6,8 @@ Given three CSV files, [Author List](src/person.csv), [Paper List](src/paper.csv
 - Edit CSV files under [src](src).
 - Run the following to generate `output.md`. In addition to `md`, there are options `html` and `bibtex`.
 ```console
-git clone XXX
-cd XXX
+git clone https://github.com/matsui528/timberpile.git
+cd timberpile
 python main.py --output_type md --output output.md
 ```
 - To generate and delete all at once, do the following.
@@ -69,7 +69,7 @@ See the followings.
 
 ---
 
-# 木材の山 :wood:
+# 木材の山:wood:
 
 [著者一覧](src/person.csv)、[論文一覧](src/paper.csv)、[著者論文関係](src/paper_author.csv)、の３つのcsvファイルを準備し、そこから色々なスタイルで論文リストを生成するスクリプトです。
 
@@ -78,8 +78,8 @@ See the followings.
 - [src](src)以下を編集します。
 - 下記を実行すると`output.md`が生成されます。`md`の他にも`html`および`bibtex`のオプションがあります。
 ```console
-git clone XXX
-cd XXX
+git clone https://github.com/matsui528/timberpile.git
+cd timberpile
 python main.py --output_type md --output output.md
 ```
 - 一括生成・削除するには以下のようにします。
