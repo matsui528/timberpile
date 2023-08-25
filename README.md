@@ -20,14 +20,14 @@ make clean # delete all at once
 ## Example of output
 See the followings.
 
-### ``output.md``
+### `output.md`
 ```md
 - John Smith, Taro Tanaka, Hanako Yamada, "Building Rome in Five Years", CVPR, 2021.
 - Taro Tanaka, John Smith, "Weighted Least Squares are All You Need", ICLR, 2022.
 - John Smith, Lebron James, Cixin Liu, "Tha Case for non-Learned Index Structures", ICCV, 2023.
 ```
 
-### ``output.html`
+### `output.html`
 ```html
 <ul>
 	<li><a href="http://www.example.com">スミスジョン</a>, 田中太郎, <a href="http://www.google.com">山田花子</a>, "Building Rome in Five Years", CVPR, 2021.</li>
