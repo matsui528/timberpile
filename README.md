@@ -69,7 +69,7 @@ See the followings.
 
 ---
 
-# 木材の山:wood:
+# 木杭:wood:
 
 [著者一覧](src/person.csv)、[論文一覧](src/paper.csv)、[著者論文関係](src/paper_author.csv)、の３つのcsvファイルを準備し、そこから色々なスタイルで論文リストを生成するスクリプトです。
 
