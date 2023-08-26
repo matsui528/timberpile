@@ -20,7 +20,7 @@ class Person:
     last_jp : str
         The last name of the person in Japanese.
     web : str
-        The website of the person.
+        The URL of the website of the person.
     """
     id: int
     first_en: str
@@ -83,7 +83,7 @@ class Paper:
     year : int
         The year of the paper.
     pdf : str
-        The PDF file of the paper.
+        The URL of the PDF file of the paper.
     authors : list[Person], optional
         The authors of the paper. Default is an empty list.
     """
@@ -97,9 +97,10 @@ class Paper:
 
     def __post_init__(self):
         """
-        Convert the ID to an integer if it is a string.
+        Convert the ID and year to an integer if it is a string.
         """
         self.id = int(self.id)
+        self.year = int(self.year)
 
     def md(self):
         """
@@ -163,20 +164,20 @@ def main(args):
         The command line arguments.
     """
 
-    # Read the person information.
+    # Read the person information as a dict: person_id -> Person.
     with open(args.person, "rt") as f:
         persons = {int(row["id"]): Person(**row) for row in csv.DictReader(f)}
 
-    # Read the paper information.
+    # Read the paper information as a dict: paper_id -> Paper.
     with open(args.paper, "rt") as f:
-        papers = [Paper(**row) for row in csv.DictReader(f)]
+        papers = {int(row["id"]): Paper(**row) for row in csv.DictReader(f)}
 
-    # Read the paper-author information.
+    # Read the paper-author information (paper_id -> author_id) and add the authors to the papers.
     with open(args.paper_author, "rt") as f:
         for row in csv.DictReader(f):
             paper_id = int(row["paper_id"])
             person_id = int(row["person_id"])
-            assert paper_id < len(papers) and person_id in persons
+            assert paper_id in papers and person_id in persons
 
             # Add the author to the paper.
             papers[paper_id].authors.append(persons[person_id])
@@ -184,15 +185,15 @@ def main(args):
     # Render the output.
     body = ""
     if args.output_type == "md":
-        for paper in papers:
+        for _, paper in papers.items():
             body += paper.md()
     elif args.output_type == "html":
         body += f'<ul>\n'
-        for paper in papers:
+        for _, paper in papers.items():
             body += paper.html()
         body += f'</ul>\n'
     elif args.output_type == "bibtex":
-        for paper in papers:
+        for _, paper in papers.items():
             body += paper.bibtex()
 
     # Write the output.
