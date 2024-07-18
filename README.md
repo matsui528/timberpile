@@ -1,4 +1,4 @@
-# Timberpile:wood:
+# Timberpile :wood:
 Given three CSV files, [Author List](src/person.csv), [Paper List](src/paper.csv), and [Author Paper Relationship](src/paper_author.csv), this script generates paper lists in various styles.
 
 ## Usage
@@ -69,7 +69,7 @@ See the followings.
 
 ---
 
-# 木杭:wood:
+# 木杭 :wood:
 
 [著者一覧](src/person.csv)、[論文一覧](src/paper.csv)、[著者論文関係](src/paper_author.csv)、の３つのcsvファイルを準備し、そこから色々なスタイルで論文リストを生成するスクリプトです。
 
